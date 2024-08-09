@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anaSayfaFragment">
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.example.filimleruygulamassqflite.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/action_anaSayfaFragment_to_filimlerSayfaFragment"
+            app:destination="@id/filimlerSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filimlerSayfaFragment"
+        android:name="com.example.filimleruygulamassqflite.FilimlerSayfaFragment"
+        android:label="fragment_filimler_sayfa"
+        tools:layout="@layout/fragment_filimler_sayfa" >
+        <argument
+            android:name="nesne"
+            app:argType="com.example.filimleruygulamassqflite.Kategoriler" />
+        <action
+            android:id="@+id/action_filimlerSayfaFragment_to_detaySayfaFragment"
+            app:destination="@id/detaySayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detaySayfaFragment"
+        android:name="com.example.filimleruygulamassqflite.DetaySayfaFragment"
+        android:label="fragment_detay_sayfa"
+        tools:layout="@layout/fragment_detay_sayfa" >
+        <argument
+            android:name="filmNesne"
+            app:argType="com.example.filimleruygulamassqflite.Filmler" />
+    </fragment>
+</navigation>
